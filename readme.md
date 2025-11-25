@@ -1,4 +1,10 @@
 # 🔍 HR Job Matching & Skill Gap Analysis
+![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green?logo=fastapi)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-blue?logo=postgresql)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red?logo=streamlit)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
 End-to-End AI Engineering Project using Python, PostgreSQL, FastAPI, Streamlit, and LinkedIn Scraping
 
 This project builds an end-to-end system for:
