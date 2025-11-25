@@ -1,0 +1,678 @@
+python
+r
+java
+c++
+c
+scala
+sql
+nosql
+mysql
+postgresql
+sqlite
+mongodb
+cassandra
+redis
+elasticsearch
+neo4j
+bigquery
+snowflake
+redshift
+dynamodb
+hbase
+oracle
+mariadb
+firebase
+cloud firestore
+aws
+amazon web services
+gcp
+google cloud
+azure
+azure cloud
+cloud computing
+cloud architecture
+terraform
+ansible
+cloudformation
+serverless
+lambda
+api gateway
+cloud monitoring
+iam
+eks
+ecs
+s3
+ec2
+vpc
+cloud storage
+bigtable
+dataproc
+dataflow
+pubsub
+app engine
+vertex ai
+cloud run
+kubernetes
+k8s
+docker
+containerization
+docker compose
+helm
+ci/cd
+jenkins
+gitlab ci
+github actions
+bitbucket pipelines
+devops
+mlops
+dataops
+prometheus
+grafana
+splunk
+elk stack
+kafka
+rabbitmq
+airflow
+prefect
+dagster
+event streaming
+microservices
+rest api
+graphql
+fastapi
+flask
+django
+spring boot
+nodejs
+expressjs
+typescript
+javascript
+html
+css
+react
+angular
+vue
+svelte
+frontend development
+backend development
+full stack development
+api design
+grpc
+oauth
+jwt
+linux
+unix
+bash
+shell scripting
+powershell
+virtualization
+vmware
+nginx
+apache
+load balancing
+scalability
+distributed systems
+parallel computing
+mapreduce
+hadoop
+hdfs
+spark
+pyspark
+spark sql
+spark streaming
+databricks
+data warehouse
+data modeling
+dimensional modeling
+star schema
+snowflake schema
+etl
+elt
+data pipeline
+data ingestion
+data cleaning
+data wrangling
+feature engineering
+feature selection
+data preprocessing
+eda
+statistical analysis
+hypothesis testing
+probability
+bayesian statistics
+markov chain
+random forest
+decision tree
+xgboost
+lightgbm
+catboost
+gradient boosting
+svm
+knn
+naive bayes
+logistic regression
+linear regression
+ridge regression
+lasso
+elasticnet
+pca
+clustering
+kmeans
+hierarchical clustering
+dbscan
+time series
+arima
+sarima
+lstm
+gru
+transformer
+attention mechanism
+deep learning
+neural networks
+cnn
+rnn
+bert
+gpt
+llm
+nlp
+natural language processing
+tokenization
+word embeddings
+word2vec
+glove
+fasttext
+text classification
+text generation
+question answering
+sentiment analysis
+entity recognition
+speech recognition
+computer vision
+image classification
+object detection
+machine learning
+deep learning
+computer vision
+large language modelling
+mlops
+segmentation
+yolo
+aws
+tensorflow
+pytorch
+sklearn
+git
+data engineering
+data scientist
+azure
+generative ai
+faster rcnn
+mobilenet
+data visualization
+predictive modelling
+resnet
+efficientnet
+ocr
+tesseract
+opencv
+pytorch
+torch
+tensorflow
+keras
+jax
+huggingface
+sklearn
+scikit-learn
+pandas
+numpy
+matplotlib
+seaborn
+plotly
+altair
+data visualization
+dashboarding
+tableau
+powerbi
+looker
+superset
+metabase
+qlik
+business intelligence
+business analytics
+product analytics
+ab testing
+cohort analysis
+metric design
+kpi analysis
+customer segmentation
+crm analytics
+marketing analytics
+finance analytics
+risk modeling
+fraud detection
+recommender system
+collaborative filtering
+matrix factorization
+ranking models
+graph analytics
+knowledge graphs
+vector databases
+faiss
+chroma
+weaviate
+pinecone
+qdrant
+milvus
+semantic search
+retrieval augmented generation
+rag
+model evaluation
+model deployment
+model serving
+api deployment
+docker deployment
+kubernetes deployment
+streamlit
+gradio
+flask api
+fastapi api
+graphql api
+git
+github
+gitlab
+version control
+jira
+confluence
+scrum
+agile
+kanban
+project management
+leadership
+communication
+teamwork
+problem solving
+critical thinking
+presentation skills
+research skills
+writing skills
+testing
+unit testing
+integration testing
+pytest
+unittest
+load testing
+performance testing
+monitoring
+logging
+observability
+data ethics
+privacy
+security
+encryption
+threat modeling
+penetration testing
+networking
+tcp/ip
+dns
+http
+ssl
+tls
+encryption
+oauth2
+jwt auth
+sso
+saml
+haccp
+fssai
+food safety
+quality assurance
+quality control
+microbiology
+biotechnology
+molecular biology
+clinical research
+gmp
+glp
+regulatory affairs
+pharmacovigilance
+drug safety
+circuit design
+pcb design
+embedded systems
+vlsi
+verilog
+vhdl
+plc
+scada
+hvac
+autocad
+solidworks
+catia
+ansys
+structural analysis
+concrete technology
+surveying
+construction management
+project planning
+supply chain management
+logistics
+inventory management
+accounting
+auditing
+taxation
+financial modeling
+risk management
+content writing
+seo
+digital marketing
+graphic design
+adobe creative suite
+photoshop
+illustrator
+human resources
+recruitment
+payroll
+labor laws
+sales
+business development
+customer relationship management
+crm
+negotiation
+strategic planning
+market research
+brand management
+public relations
+event management
+social media marketing
+copywriting
+video editing
+premiere pro
+final cut pro
+after effects
+3d modeling
+blender
+maya
+unreal engine
+unity
+game design
+animation
+ui/ux design
+figma
+sketch
+invision
+prototyping
+user research
+wireframing
+usability testing
+information architecture
+interaction design
+visual design
+typography
+color theory
+responsive design
+accessibility
+legal research
+contract drafting
+litigation
+intellectual property
+corporate law
+criminal law
+family law
+teaching
+curriculum development
+classroom management
+educational technology
+instructional design
+e-learning
+mentoring
+coaching
+public speaking
+storytelling
+creative writing
+journalism
+editing
+proofreading
+translation
+transcription
+data entry
+virtual assistance
+administrative support
+customer service
+technical support
+help desk
+network administration
+system administration
+cybersecurity
+penetration testing
+ethical hacking
+vulnerability assessment
+incident response
+forensics
+compliance
+gdpr
+hipaa
+pci dss
+iso 27001
+nist
+cloud security
+application security
+network security
+endpoint security
+identity and access management
+cryptography
+blockchain
+smart contracts
+solidity
+ethereum
+hyperledger
+bitcoin
+cryptocurrency
+decentralized finance
+nft
+metaverse
+augmented reality
+virtual reality
+mixed reality
+robotics
+ros
+computer vision
+slam
+path planning
+control systems
+mechatronics
+automation
+industrial automation
+iot
+internet of things
+sensor networks
+edge computing
+wearable technology
+biomedical engineering
+medical imaging
+bioinformatics
+genomics
+proteomics
+drug discovery
+clinical trials
+epidemiology
+public health
+environmental science
+sustainability
+renewable energy
+solar energy
+wind energy
+green building
+waste management
+water treatment
+geology
+gis
+remote sensing
+surveying
+urban planning
+architecture
+interior design
+landscape architecture
+civil engineering
+structural engineering
+geotechnical engineering
+transportation engineering
+environmental engineering
+mechanical engineering
+thermal engineering
+fluid mechanics
+thermodynamics
+heat transfer
+manufacturing
+cad/cam
+automotive engineering
+aerospace engineering
+avionics
+propulsion
+aerodynamics
+chemical engineering
+process engineering
+process control
+reaction engineering
+separation processes
+petroleum engineering
+reservoir engineering
+drilling engineering
+production engineering
+materials science
+nanotechnology
+metallurgy
+ceramics
+polymers
+composites
+textile engineering
+fashion design
+apparel merchandising
+retail management
+supply chain
+logistics
+procurement
+operations management
+six sigma
+lean manufacturing
+kaizen
+total quality management
+project management
+agile
+scrum
+kanban
+waterfall
+prince2
+pmp
+risk management
+change management
+stakeholder management
+business analysis
+requirements gathering
+process mapping
+gap analysis
+swot analysis
+pestle analysis
+financial analysis
+financial reporting
+budgeting
+forecasting
+variance analysis
+valuation
+investment banking
+private equity
+venture capital
+mergers and acquisitions
+corporate finance
+asset management
+wealth management
+portfolio management
+trading
+derivatives
+fixed income
+equities
+commodities
+forex
+risk management
+compliance
+audit
+internal audit
+external audit
+taxation
+corporate tax
+income tax
+gst
+vat
+transfer pricing
+international tax
+legal
+corporate law
+commercial law
+contract law
+intellectual property law
+employment law
+litigation
+dispute resolution
+arbitration
+mediation
+compliance
+regulatory affairs
+human resources
+talent acquisition
+recruitment
+onboarding
+performance management
+employee relations
+compensation and benefits
+learning and development
+organizational development
+hr analytics
+hris
+payroll
+labor relations
+diversity and inclusion
+psychology
+counseling
+psychotherapy
+clinical psychology
+educational psychology
+industrial-organizational psychology
+sociology
+social work
+community development
+non-profit management
+fundraising
+grant writing
+volunteer management
+advocacy
+public policy
+international relations
+political science
+economics
+history
+geography
+philosophy
+literature
+linguistics
+languages
+translation
+interpretation
+arts
+music
+dance
+theater
+film
+photography
+fine arts
+design
+graphic design
+web design
+interior design
+fashion design
+product design
+industrial design
+game design
+animation
+vfx
+architecture
+landscape architecture
+urban design

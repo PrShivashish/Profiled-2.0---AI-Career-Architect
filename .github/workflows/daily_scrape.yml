@@ -1,0 +1,33 @@
+name: Daily Job Scraper
+
+on:
+  schedule:
+    # Runs at 04:30 UTC which is 10:00 AM IST
+    - cron: '30 4 * * *'
+  workflow_dispatch: # Allows manual trigger for testing
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Scraper
+        run: python scripts/linkedin_scraper.py
+
+      - name: Run Ingestor
+        env:
+          # You will set this secret in GitHub Settings
+          DB_URL: ${{ secrets.DB_URL }}
+        run: python scripts/ingest_data.py
