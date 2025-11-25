@@ -1,9 +1,11 @@
+import os  # ← CHANGE 1: Added for environment variable reading
 import streamlit as st
 import pandas as pd
 import requests
 from pypdf import PdfReader
 from io import BytesIO
 import base64
+
 
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
@@ -12,6 +14,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
 
 # --- CUSTOM CSS (THEME: COSMIC INTELLIGENCE) ---
 st.markdown("""
@@ -30,6 +33,7 @@ st.markdown("""
             background: linear-gradient(135deg, #0F0C29 0%, #302B63 50%, #24243E 100%);
             background-attachment: fixed;
         }
+
 
         /* HEADERS (Font: Outfit) */
         h1, h2, h3, h4, h5 {
@@ -63,6 +67,7 @@ st.markdown("""
             border-color: rgba(139, 92, 246, 0.5); /* Violet glow */
         }
 
+
         /* BUTTONS: VIBRANT & CLEAN */
         .stButton > button {
             background: linear-gradient(90deg, #8B5CF6 0%, #D946EF 100%); /* Violet to Pink */
@@ -83,10 +88,12 @@ st.markdown("""
             transform: scale(1.02);
         }
 
+
         /* PROGRESS BAR */
         .stProgress > div > div > div > div {
             background: linear-gradient(90deg, #3B82F6, #8B5CF6);
         }
+
 
         /* SKILL CHIPS */
         .skill-chip {
@@ -134,7 +141,15 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-API_URL = "http://localhost:8000/match"
+
+# --- CHANGE 2: API URL from environment variable (Render will set this) ---
+# OLD: API_URL = "http://localhost:8000/match"
+# NEW: Read from environment with fallback for local development
+API_URL = os.getenv(
+    "API_URL", 
+    "http://localhost:8000/match"  # Local fallback
+)
+
 
 # --- HELPER FUNCTIONS ---
 def extract_pdf(file):
@@ -142,26 +157,32 @@ def extract_pdf(file):
     pages = [p.extract_text() or "" for p in reader.pages]
     return "\n".join(pages)
 
+
 def build_strengths_weaknesses(data):
     skills = data["candidate_skills"]
     ats = data["ats_score"]
     strengths = []
     weaknesses = []
 
+
     # Logic (English)
     if ats > 0.75: strengths.append("Strong ATS optimization detected.")
     elif ats > 0.50: strengths.append("Moderate ATS compatibility.")
     else: weaknesses.append("Low ATS score - consider restructuring.")
 
+
     if len(skills) >= 10: strengths.append(f"Detected {len(skills)} technical skills.")
     elif len(skills) < 5: weaknesses.append("Skill section appears sparse.")
+
 
     top_job = data["top_jobs"][0] if data["top_jobs"] else None
     if top_job:
         if len(top_job["overlap_skills"]) >= 3: strengths.append("Strong alignment with top market roles.")
         if len(top_job["gap_skills"]) > 5: weaknesses.append("Significant skill gaps for target roles.")
 
+
     return strengths, weaknesses
+
 
 # --- SIDEBAR CONFIGURATION (Structured & Clean) ---
 with st.sidebar:
@@ -200,6 +221,7 @@ with st.sidebar:
     
     st.markdown("<br>", unsafe_allow_html=True)
     st.caption("Designed for India • Powered by GenAI")
+
 
 # --- MAIN CONTENT AREA ---
 if not uploaded:
@@ -243,6 +265,7 @@ if not uploaded:
         </div>
         """, unsafe_allow_html=True)
 
+
 else:
     # --- ANALYSIS RESULT VIEW ---
     if analyze_btn:
@@ -262,10 +285,11 @@ else:
                     "Science & Healthcare (Food/Bio)": "Food Technologist Bio Science"
                 }
                 
+                # --- CHANGE 3: Updated API call to pass domain parameter ---
                 res = requests.post(API_URL, json={
                     "cv_text": cv_text, 
                     "top_k": top_k,
-                    "domain": domain_map.get(selected_domain)
+                    "domain": domain_map.get(selected_domain)  # ← Added domain filtering
                 })
                 
                 if res.status_code != 200:
@@ -302,6 +326,7 @@ else:
                         </div>
                         """, unsafe_allow_html=True)
 
+
                     with m2:
                         # Insights Card (Clean Lists)
                         st.markdown('<div class="glass-card" style="height: 100%;">', unsafe_allow_html=True)
@@ -321,6 +346,7 @@ else:
                                 st.markdown("<div style='font-size:0.85rem; color: #94A3B8;'>No major weaknesses detected.</div>", unsafe_allow_html=True)
                         st.markdown('</div>', unsafe_allow_html=True)
 
+
                     with m3:
                         # Key Stats Card
                         st.markdown(f"""
@@ -337,10 +363,12 @@ else:
                         </div>
                         """, unsafe_allow_html=True)
 
+
                     # VERIFIED SKILLS SECTION
                     st.markdown("#### 🧬 Verified Skills Profile")
                     skills_html = "".join([f'<span class="skill-chip">{s}</span>' for s in data["candidate_skills"]])
                     st.markdown(f'<div class="glass-card">{skills_html}</div>', unsafe_allow_html=True)
+
 
                     # JOB RECOMMENDATIONS SECTION
                     st.markdown(f"#### 🎯 Top Matches: {selected_domain}")
@@ -358,6 +386,13 @@ else:
                         # Generate chips for gap skills
                         gap_html = "".join([f'<span style="color:#EF4444; background:rgba(239, 68, 68, 0.1); padding:2px 8px; border-radius:12px; font-size:0.75rem; margin-right:4px;">{s}</span>' for s in job['gap_skills'][:5]])
 
+                        # --- CHANGE 4: Added safety check for missing job URLs ---
+                        job_url = job.get('url', '#')  # ← Prevents error if URL is missing
+                        if job_url == '#':
+                            apply_link_html = '<span style="color: #64748B; font-size: 0.9rem;">URL not available</span>'
+                        else:
+                            apply_link_html = f'<a href="{job_url}" target="_blank" style="text-decoration: none; color: #3B82F6; font-size: 0.9rem;">Apply Now ↗</a>'
+
                         with st.container():
                             st.markdown(f"""
                             <div class="glass-card">
@@ -369,7 +404,7 @@ else:
                                     </div>
                                     <div style="text-align: right;">
                                         <div style="font-size: 1.5rem; font-weight: 800; color: #10B981;">{score}% Match</div>
-                                        <a href="{job.get('url', '#')}" target="_blank" style="text-decoration: none; color: #3B82F6; font-size: 0.9rem;">Apply Now ↗</a>
+                                        {apply_link_html}
                                     </div>
                                 </div>
                                 <hr style="border-color: rgba(255,255,255,0.1); margin: 15px 0;">
@@ -386,8 +421,10 @@ else:
                             </div>
                             """, unsafe_allow_html=True)
 
+
             except Exception as e:
                 st.error(f"An error occurred: {e}")
+
 
 # --- FOOTER ---
 st.markdown("""
